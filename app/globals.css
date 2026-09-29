@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 30% 3%;
+    --foreground: 210 20% 96%;
+    --card: 210 25% 6%;
+    --card-foreground: 210 20% 96%;
+    --popover: 210 25% 6%;
+    --popover-foreground: 210 20% 96%;
+    --primary: 215 100% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 10%;
+    --secondary-foreground: 210 20% 96%;
+    --muted: 210 20% 10%;
+    --muted-foreground: 210 10% 60%;
+    --accent: 215 100% 52%;
+    --accent-foreground: 210 20% 96%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 96%;
+    --border: 210 10% 12%;
+    --input: 210 10% 12%;
+    --ring: 215 100% 52%;
+    --radius: 0.75rem;
+
+    --chart-1: 215 100% 52%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    --status-received: 215 90% 58%;
+    --status-inspecting: 190 85% 50%;
+    --status-pending: 35 95% 55%;
+    --status-parts: 280 70% 60%;
+    --status-repairing: 0 80% 55%;
+    --status-qc: 160 70% 45%;
+    --status-ready: 140 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground;
+    font-family: 'Sarabun', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    background-color: #05080C;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .metallic-surface {
+    background: rgba(9, 14, 20, 0.88);
+  }
+
+  .metallic-border {
+    border: 1px solid rgba(255, 255, 255, 0.11);
+  }
+
+  .glass-card {
+    background: rgba(7, 11, 16, 0.86);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.11);
+  }
+
+  .blue-glow {
+    box-shadow: 0 0 20px rgba(10, 132, 255, 0.3);
+  }
+
+  .stat-glow {
+    box-shadow: 0 4px 24px rgba(10, 132, 255, 0.12);
+  }
+
+  .nav-blur {
+    backdrop-filter: blur(16px);
+    background: rgba(4, 7, 11, 0.94);
+  }
+}
+
+@layer components {
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full;
+  }
+}
+
+@media print {
+  .nav-blur,
+  nav,
+  .bottom-nav {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
